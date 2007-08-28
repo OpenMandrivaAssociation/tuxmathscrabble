@@ -60,7 +60,6 @@ Icon=%{name}
 Terminal=false
 Type=Application
 Categories=X-MandrivaLinux-MoreApplications-Games-Boards;Game;BoardGame;
-Encoding=UTF-8
 EOF
 
 
