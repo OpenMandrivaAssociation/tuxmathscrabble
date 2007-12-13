@@ -4,11 +4,12 @@
 
 Summary: A math version of the popular board game for ages 4-40
 Name: tuxmathscrabble
-Version: 3.0.4
-Release: %mkrel 2
+Version: 0.4.5
+Release: %mkrel 1
 URL: http://www.asymptopia.org/
-Source0: http://prdownloads.sourceforge.net/tuxmathscrabble/%{oname}-%{version}LIN.tar.bz2
+Source0: http://prdownloads.sourceforge.net/tuxmathscrabble/%oname-%version.tgz
 License: GPL
+Epoch:  1
 Group: Games/Boards
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
@@ -25,7 +26,7 @@ his own pieces as well as performing various animated antics.
 
 %prep
 
-%setup -q -n TuxMathScrabble-%{version}LIN
+%setup -q -n TuxMathScrabble-%{version}
 
 %build
 
@@ -33,22 +34,11 @@ his own pieces as well as performing various animated antics.
 
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}%{pythonlibs}
-cp -R %name/* %{buildroot}%{pythonlibs}/
+cp -R %oname/* %{buildroot}%{pythonlibs}
 
 mkdir -p %{buildroot}%{_gamesbindir}
 cp %oname.py %{buildroot}%{_gamesbindir}/tuxmathscrabble
 
-
-install -d -m 0755 %buildroot/%_menudir
-cat >%buildroot/%_menudir/%name <<EOF
-?package(%{name}): command="%{_gamesbindir}/tuxmathscrabble" \
-icon="" \
-needs="x11" \
-title="TuxMathScrabble" \
-longtitle="Fun game to learn math" \
-section="More Applications/Games/Boards"  \
-xdg="true"
-EOF
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -59,7 +49,7 @@ Exec=%{_gamesbindir}/tuxmathscrabble
 Icon=%{name}
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-MoreApplications-Games-Boards;Game;BoardGame;
+Categories=Game;BoardGame;
 EOF
 
 
@@ -78,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_gamesbindir}/*
 %{pythonlibs}
-%{_menudir}/*
 %{_datadir}/applications/mandriva-%{name}.desktop 
 
 
