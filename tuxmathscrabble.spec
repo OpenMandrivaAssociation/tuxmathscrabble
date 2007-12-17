@@ -11,7 +11,6 @@ Source0: http://prdownloads.sourceforge.net/tuxmathscrabble/%oname-%version-prel
 License: GPL
 Epoch:  1
 Group: Games/Boards
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
 Requires: python-pygame
 
