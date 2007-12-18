@@ -40,6 +40,7 @@ cp -R %oname/* %{buildroot}%{pythonlibs}
 mkdir -p %{buildroot}%{_gamesbindir}
 cp %oname.py %{buildroot}%{_gamesbindir}/tuxmathscrabble
 
+find -name ".svn" %{buildroot} | xargs rm -fr
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
