@@ -12,6 +12,7 @@ Patch0:    TuxMathScrabble-0.5.0-rc2-fixpath.patch
 License: GPL
 Epoch:  1
 Group: Games/Boards
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
 Requires: python-pygame
 
