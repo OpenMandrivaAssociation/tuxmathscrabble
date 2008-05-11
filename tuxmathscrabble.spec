@@ -5,7 +5,7 @@
 Summary: A math version of the popular board game for ages 4-40
 Name: tuxmathscrabble
 Version: 0.5.0
-Release: %mkrel 0.2
+Release: %mkrel 0.3
 URL: http://www.asymptopia.org/
 Source0: http://prdownloads.sourceforge.net/tuxmathscrabble/%oname-%version-rc2.tgz
 Patch0:    TuxMathScrabble-0.5.0-rc2-fixpath.patch
@@ -13,7 +13,6 @@ License: GPL
 Epoch:  1
 Group: Games/Boards
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildArch: noarch
 Requires: python-pygame
 
 %description
