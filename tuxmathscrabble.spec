@@ -2,7 +2,7 @@
 
 Name:       tuxmathscrabble
 Version:    0.5.8
-Release:    %mkrel 1
+Release:    %mkrel 2
 Summary:    A math version of the popular board game for ages 4-40
 License:    GPLv2+
 Epoch:      1
