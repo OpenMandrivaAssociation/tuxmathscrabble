@@ -4,12 +4,13 @@ Name:       tuxmathscrabble
 Version:    0.5.8
 Release:    %mkrel 1
 Summary:    A math version of the popular board game for ages 4-40
-License:    GPL
+License:    GPLv2+
 Epoch:      1
 Group:      Games/Boards
 URL:        http://www.asymptopia.org/
 Source0:    http://prdownloads.sourceforge.net/tuxmathscrabble/%oname-%version.tgz
 Patch0:    TuxMathScrabble-0.5.8-fix-path.patch
+BuildRequires:	imagemagick
 Requires:   python-pygame
 Requires:   wxPythonGTK
 BuildArch:  noarch
@@ -40,6 +41,13 @@ cp -pr TuxMathScrabble %{buildroot}%{_gamesdatadir}/tuxmathscrabble/lib
 
 install -d -m 755 %{buildroot}%{_gamesbindir}
 install -m 755 tuxmathscrabble %{buildroot}%{_gamesbindir}/tuxmathscrabble
+
+mkdir -p %{buildroot}%{_liconsdir}
+mkdir -p %{buildroot}%{_iconsdir}
+mkdir -p %{buildroot}%{_miconsdir}
+convert -resize 48x48 tms.ico %{buildroot}%{_liconsdir}/%{name}.png
+convert -resize 32x32 tms.ico %{buildroot}%{_iconsdir}/%{name}.png
+convert -resize 16x16 tms.ico %{buildroot}%{_miconsdir}/%{name}.png
 
 mkdir -p %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -72,3 +80,5 @@ rm -rf %{buildroot}
 %{_gamesbindir}/tuxmathscrabble
 %{_gamesdatadir}/tuxmathscrabble
 %{_datadir}/applications/mandriva-%{name}.desktop 
+%{_iconsdir}/*
+
