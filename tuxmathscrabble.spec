@@ -82,3 +82,67 @@ rm -rf %{buildroot}
 %{_datadir}/applications/mandriva-%{name}.desktop 
 %{_iconsdir}/*
 
+
+
+%changelog
+* Sat May 16 2009 Samuel Verschelde <stormi@mandriva.org> 1:0.5.8-2mdv2010.0
++ Revision: 376469
+- increase release
+
+* Sat May 16 2009 Samuel Verschelde <stormi@mandriva.org> 1:0.5.8-1mdv2010.0
++ Revision: 376452
+- fix license
+- add icons
+
+* Mon Apr 13 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1:0.5.8-1mdv2009.1
++ Revision: 366790
+- new version
+- don't forget to install configuration and fonts
+- make it noarch
+
+* Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 1:0.5.0-4.3mdv2009.0
++ Revision: 269441
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+* Sun May 11 2008 Nicolas Lécureuil <neoclust@mandriva.org> 1:0.5.0-0.3mdv2009.0
++ Revision: 205581
+- Should not be noarch ed
+- Remove all .svn files and folder
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue Dec 18 2007 Nicolas Lécureuil <neoclust@mandriva.org> 1:0.5.0-0.2mdv2008.1
++ Revision: 132015
+- New version 0.5.0 Rc2
+  Fix patch in Environment.py ( patch from PCLinuxOS )
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Fri Dec 14 2007 Nicolas Lécureuil <neoclust@mandriva.org> 1:0.5.0-0.1mdv2008.1
++ Revision: 119664
+- New pre version of 0.5.0
+
+* Fri Dec 14 2007 Nicolas Lécureuil <neoclust@mandriva.org> 1:0.4.5-1mdv2008.1
++ Revision: 119591
+- New version 0.4.5
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+
+* Fri Dec 01 2006 Nicolas Lécureuil <neoclust@mandriva.org> 3.0.4-2mdv2007.0
++ Revision: 89589
+- Fix File List
+- New version 3.0.4
+- import tuxmathscrabble-2.7-1mdk
+
+* Mon Jan 17 2005 Michael Scherer <misc@mandrake.org> 2.7-1mdk
+- misc cleanup
+- from jean-sebastien HUBERT <jshubert@free.fr>
+  - first release for Linux-Mandrake
+
