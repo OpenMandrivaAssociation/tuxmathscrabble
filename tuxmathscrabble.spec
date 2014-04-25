@@ -26,7 +26,7 @@ pop-out of the most recently moved tiles and do a little dance. Tux moves
 his own pieces as well as performing various animated antics.
 
 %prep
-%setup -q -n TuxMathScrabble
+%setup -qn %{name}-%{version}
 %patch0 -p1
 
 %build
