@@ -1,0 +1,72 @@
+--- tuxmathscrabble.py.orig	2010-01-15 14:36:13.000000000 +0100
++++ tuxmathscrabble.py	2011-04-15 23:54:33.818546856 +0200
+@@ -17,6 +17,7 @@
+ ***********************************************************/
+ """
+ import os,sys,string,time
++sys.path.append('/usr/share/games/tuxmathscrabble/lib')
+ from TuxMathScrabble.tms import *
+ 
+ def usage():
+--- TuxMathScrabble/environment.py.orig	2010-01-18 02:59:34.000000000 +0100
++++ TuxMathScrabble/environment.py	2011-04-16 00:26:56.368247013 +0200
+@@ -37,10 +37,9 @@ class Environment:
+ 		
+ 		if OS=='lin':
+ 			import pygame 
+-			for sitepkgdir in sys.path:
+-				if sitepkgdir[-13:]=='site-packages':break
+-			configdir=os.getenv('HOME')
+-			fontdir=os.path.join('/','var','games',appname)#,os.path.basename(appname)
++			sitepkgdir=os.path.join('/','usr','share','games','tuxmathscrabble', 'lib')
++			configdir=os.path.join('/','usr','share','games','tuxmathscrabble')#,os.path.basename(appname)
++			fontdir=os.path.join('/','usr','share','games','tuxmathscrabble')#,os.path.basename(appname)
+ 			homedir=os.getenv('HOME')
+ 		
+ 		elif OS=='win':
+@@ -59,20 +58,20 @@ class Environment:
+ 			homedir=os.getenv('HOME')
+ 			
+ 		#If application hasn't been installed (via setup.py) then try to run from tgz directory:
+-		if os.path.exists(appname) and os.path.exists('tuxmathscrabble.py'):#if yes, then probably want to be running w/o installing.
+-			sitepkgdir='.'
+-			fontdir='.'
+-			configdir='.'
+-			homedir=os.getenv('HOME')
+-			if not homedir:homedir=os.getenv('USERPROFILE')
+-		elif os.path.exists(os.path.join(sitepkgdir,appname,'tms.py')):pass
+-		elif os.path.exists(os.path.join(sitepkgdir,appname,'tms.py')) and OS=='win':pass
+-		else:
+-			sitepkgdir='.'
+-			fontdir='.'
+-			configdir='.'
+-			homedir=os.getenv('HOME')
+-			if not homedir:homedir=os.getenv('USERPROFILE')
++		#if os.path.exists(appname) and os.path.exists('tuxmathscrabble.py'):#if yes, then probably want to be running w/o installing.
++		#	sitepkgdir='.'
++		#	fontdir='.'
++		#	configdir='.'
++		#	homedir=os.getenv('HOME')
++		#	if not homedir:homedir=os.getenv('USERPROFILE')
++		#elif os.path.exists(os.path.join(sitepkgdir,appname,'tms.py')):pass
++		#elif os.path.exists(os.path.join(sitepkgdir,appname,'tms.py')) and OS=='win':pass
++		#else:
++		#	sitepkgdir='.'
++		#	fontdir='.'
++		#	configdir='.'
++		#	homedir=os.getenv('HOME')
++		#	if not homedir:homedir=os.getenv('USERPROFILE')
+ 		self.OS=OS
+ 		self.sitepkgdir=sitepkgdir
+ 		self.fontdir=fontdir
+--- TuxMathScrabble/tms.py	2010-10-26 15:32:14.000000000 +0200
++++ TuxMathScrabble/tms.py.new	2011-04-16 01:00:02.056247001 +0200
+@@ -1232,7 +1232,7 @@ class TuxMathScrabble:
+ 		infname=os.path.join(homedir,'.tms_config')
+ 		
+ 		if not os.path.exists(infname):
+-			master_fname=os.path.join('.','.tms_config_master')
++			master_fname=os.path.join('/','usr','share','games','tuxmathscrabble','.tms_config_master')
+ 			if self.env.OS=='win':
+ 				cmd="copy %s \"%s\""%(master_fname,os.path.join(homedir,'.tms_config'))
+ 				os.system(cmd)
