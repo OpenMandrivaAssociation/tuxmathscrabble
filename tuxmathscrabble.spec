@@ -1,6 +1,6 @@
 Name:       tuxmathscrabble
 Version:    0.7.4
-Release:    1
+Release:    2
 Summary:    A math version of the popular board game for ages 4-40
 
 License:    GPLv2+
