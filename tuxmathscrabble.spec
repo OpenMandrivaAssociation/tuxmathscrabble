@@ -6,7 +6,7 @@ Summary:    A math version of the popular board game for ages 4-40
 License:    GPLv2+
 Epoch:      1
 Group:      Games/Boards
-URL:        http://www.asymptopia.org/
+URL:        https://www.asymptopia.org/
 Source0:    http://prdownloads.sourceforge.net/tuxmathscrabble/%{name}-%{version}.tar.bz2
 Patch0:    tuxmathscrabble-0.7.4-fix-path.patch
 BuildRequires:	imagemagick
